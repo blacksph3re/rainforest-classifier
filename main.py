@@ -38,6 +38,9 @@ class BirdDataset(torch.utils.data.IterableDataset):
     self.output_size = 224
     self.shuffle = True
     self.make_spec = lambda x: self.transform(x)
+
+    if self.caching_dir and not os.path.exists(self.caching_dir):
+      os.mkdir(self.caching_dir)
     
   def encode_label(self, species_id, songtype_id):
     try:
