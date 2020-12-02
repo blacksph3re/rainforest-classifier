@@ -72,7 +72,7 @@ class CornellBirdDataset(torch.utils.data.IterableDataset):
         return iter_data()
 
 
-def load_cornell_data(folder):
+def read_cornell_data(folder):
 
   data = pd.read_csv("%s/birdsong-recognition/train.csv" % folder)
   data_ext1 = pd.read_csv("%s/xeno-canto-bird-recordings-extended-a-m/train_extended.csv" % folder)
